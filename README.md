@@ -1,3 +1,6 @@
+NOTE: I just made some small change to make it compatible with ROS 2 Humble
+Hawksbill, Ubuntu 22.04 and Raspberry Pi 4. tested only with Rplidar A1
+
 RPLIDAR ROS package
 =====================================================================
 
@@ -15,37 +18,32 @@ rplidar Tutorial:  https://github.com/robopeak/rplidar_ros/wiki
 
 How to build rplidar ros package
 =====================================================================
-    1) Clone this project to your catkin's workspace src folder
-    2) Running catkin_make to build rplidarNode and rplidarNodeClient
 
-How to run rplidar ros package
-=====================================================================
-There're two ways to run rplidar ros package
+1) Clone this project to your colcon workspace src folder
+2) Install Eloquent ROS2 and colcon compiler.
+
+
+```
+cd [your-ros-package-directory]/src
+
+git clone git@github.com:babakhani/rplidar_ros2.git
+
+cd [your-ros-package-directory]
+
+colcon build --symlink-install &&
+
+source ./install/setup.bash
+```
+
+Check if package exist
+
+```
+ros2 pkg list | grep rplidar
+```
 
 I. Run rplidar node and view in the rviz
 ------------------------------------------------------------
-roslaunch rplidar_ros view_rplidar.launch (for RPLIDAR A1/A2)
-,
-roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)
-or
-roslaunch rplidar_ros view_rplidar_s1.launch (for RPLIDAR S1)
 
-You should see rplidar's scan result in the rviz.
-
-II. Run rplidar node and view using test application
-------------------------------------------------------------
-roslaunch rplidar_ros rplidar.launch (for RPLIDAR A1/A2)
-,
-roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)
-or
-roslaunch rplidar_ros rplidar_s1.launch (for RPLIDAR S1)
-
-rosrun rplidar_ros rplidarNodeClient
-
-You should see rplidar's scan result in the console
-
-Notice: the different is serial_baudrate between A1/A2 and A3/S1
-
-RPLidar frame
-=====================================================================
-RPLidar frame must be broadcasted according to picture shown in rplidar-frame.png
+```
+roslaunch rplidar_ros view_rplidar.launch.py
+```
