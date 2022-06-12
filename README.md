@@ -45,5 +45,5 @@ I. Run rplidar node and view in the rviz
 ------------------------------------------------------------
 
 ```
-roslaunch rplidar_ros view_rplidar.launch.py
+ros2 launch rplidar_ros view_rplidar.launch.py
 ```
