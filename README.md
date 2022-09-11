@@ -30,7 +30,7 @@ git clone git@github.com:babakhani/rplidar_ros2.git
 
 cd [your-ros-package-directory]
 
-colcon build --symlink-install &&
+colcon build --symlink-install
 
 source ./install/setup.bash
 ```
